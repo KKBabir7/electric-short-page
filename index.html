@@ -1,0 +1,348 @@
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+		   Scaner
+		</title>
+		    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Days+One" rel="stylesheet">
+			<link rel="icon" href="img/calicon.png" type="image/png" sizes="16x16">
+		    <link rel="stylesheet" href="css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/style.css">		
+			<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+			<link rel="stylesheet" href="css/material-design-iconic-font.css">
+			<link rel="stylesheet" href="fonts/font-awesome.min.css">	
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">			
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+			        <div class="col-md-4 col-sm-3">
+					</div>
+<!-- its main part of scanner templete -->
+					<div class="col-md-4 col-sm-6 main"><br>
+<!-- its header side -->
+					    <center>
+							<h3>Electronic Pointer Foundation</h3>
+							<p class="scan">Scan the QR code or coppy and paste the payment details into your wallet</p>
+						</center>	
+						<p class="copy-hover" id="allcopy">Copy Payment Details</p>
+						<p class="p-hover" id="allpayment">View Payment Details</p>
+						<div class="row box" id="main">
+<!-- ALL coppy link modal -->
+							<div id="myModal" class="modal">
+								<div class="modal-content">
+									<div class="modal-body">
+                <!-- due ammount coppy link -->
+										<div class="row due">
+											<div class="col-md-12">
+												<h4>Amount Due</h4>
+												<p class="cop-1" id="copied"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;Copied</p>
+												<p  class="link" id="content" style="font-size:17">0.002240 BTC</p>
+												<i class="material-icons copy-text" data-clipboard-target="#content" id="ok" style="font-size:22px">content_copy</i>
+												 
+											</div>
+										</div>
+			    <!-- address coppy link -->
+										<div class="row due">
+											<div class="col-md-12">
+												<h4>Address</h4>
+												<p class="cop-1" id="copied1"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;Copied</p>
+												<p  class="link" id="content1" style="padding-top:12px;padding-bottom:12px">14TEXwG5nBqcDXR7zVk1RTcpYNkay2cPPK</p>
+												<i class="material-icons copy-text" data-clipboard-target="#content1" id="ok1"  style="font-size:22px">content_copy</i>
+												 
+											</div>
+										</div>
+				<!-- payment coppy link -->
+										<div class="row due">
+											<div class="col-md-12">
+												<h4>Payment Link</h4>
+												<p class="cop-1" id="copied2"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;Copied</p>
+												<p class="link" id="content2" style="padding-top:12px;padding-bottom:12px">bitcoin:?r=https://bitpay.com/i/LNnkgf4gj5...</p>
+												<i class="material-icons copy-text" data-clipboard-target="#content2" id="ok2"  style="font-size:22px">content_copy</i>
+												 
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+<!-- all copy link open when this icon click -->
+							<div class="col-md-3 col-sm-3 col-xs-2 copy">
+								<i class="material-icons" onmouseover="copy()" onmouseout="copyout()" onclick="copymodel()" style="font-size:32px">content_copy</i>
+							</div>
+<!-- middell currency -->
+							<div class="col-md-6 col-sm-6 col-xs-8 btc">
+								<center>
+									<h3>0.002240 BTC</h3>
+								</center>
+							</div>
+<!--payments view link -->
+							<div class="col-md-3 col-sm-3 col-xs-2 p-details">
+								<div onmouseover="payment()" onmouseout="paymentout()"  id="circle1">
+									<strong class="a"><i id="info" class="fa fa-info" ></i><p id="demo"></p>
+									</strong>
+								</div>
+							</div>
+<!-- main scanerrr -->
+							<div class="row scan2">
+								<div class="col-md-12">
+								<br>
+								<center>
+									<img  class="img-responsive" src="img/Capture.PNG">
+								</center>
+								<br>
+								</div>
+							</div> 
+							
+<!--payment link view modal -->
+							<div id="underModal" class="umodal">
+								<div class="modal-content">
+									<div class="modal-header">
+										<center>
+											<p>Please send your payment within <span id="demo1"></span></p>
+										</center>
+									</div>
+									<div class="modal-body">
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="title">Total Price</p>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="number">20.20 USD</p>
+											</div>
+											
+										</div>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="title">Exchange Rate</p>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="number">9107.88 USD</p>
+											</div>
+											
+										</div>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="title">Subtotal</p>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="number">0.002196 BTC</p>
+											</div>
+											
+										</div>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="title">Network cost <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></p>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="number">0.0000044 BTC</p>
+											</div>
+											
+										</div>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p class="title" style="font-weight:bold;color:#000">Amount Due</p>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+											   <p style="font-weight:bold;color:#000" class="number">0.002240 BTC</p>
+											</div>
+										</div>
+									</div>
+							    </div>
+							</div>
+						</div><br>
+<!-- pay wallet button -->
+					    <center><button type="button" class="btn btn-primary">Pay In Wallet</button></center>
+					</div>
+					<div class="col-md-4 col-sm-3">
+					</div>
+				</div>
+			</div> <br>	
+		</div>	
+<!-- all script link -->
+		    <script src="js/bootstrap.js"></script>
+		    <script src="js/bootstrap.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+            <script src="js/circle-progress.js"></script>
+			<script>
+			    function copy(){
+				    
+				    var copy=document.getElementById('allcopy');
+					copy.style.display='block';
+				}
+				 function copyout(){
+				    
+				    var copy=document.getElementById('allcopy');
+					copy.style.display='none';
+				}
+				
+			</script>
+			<script>
+			
+			    function payment(){
+				    
+				    var payment=document.getElementById('allpayment');
+				    var info=document.getElementById('info');
+				    var time=document.getElementById('demo');
+					var underModal=document.getElementById('underModal');
+					info.style.display="none"
+					time.style.display="block"
+					payment.style.display='block';
+					underModal.style.display="none";
+					$('#circle1').circleProgress({
+								value: 0.85,
+								size: 44,
+								startAngle:-0.5,
+								thickness:4,
+								emptyFill: '#8B8D8E',
+
+								fill: {
+								  gradient: ["#169CDA"]
+								}
+							  });
+							  
+							  
+				}
+				 function paymentout(){
+				    
+				    var payment=document.getElementById('allpayment');
+				    var underModal=document.getElementById('underModal');
+					var copi = document.getElementById("allpayment");
+					var d=document.getElementById('main');
+					payment.style.display='none';
+					copi.style.display='none';
+					var info=document.getElementById('info');
+				    var time=document.getElementById('demo');
+					info.style.display="block"
+					info.style.top="0px"
+					info.style.right="13px"
+					time.style.display="none"
+					underModal.style.display="block";
+					underModal.style.background="rgba(0,0,0,0.4)";
+					$('#circle1').circleProgress({
+								value: 0.85,
+								size: 35,
+								startAngle:-0.5,
+								thickness:3,
+								emptyFill: '#8B8D8E',
+
+								fill: {
+								  gradient: ["#169CDA"]
+								}
+							  });
+					var underModal=document.getElementById('underModal');
+			window.onclick = function(event) {
+				  if (event.target == underModal) {
+					$("#underModal").fadeOut();
+					d.style.transition="0.4s";
+				  }
+				}
+				
+				}	
+			</script>
+			<script>
+				function copymodel(){
+				var modal = document.getElementById("myModal");
+				var cop = document.getElementById("allcopy");
+				
+				var d=document.getElementById('main');
+				modal.style.background="rgba(0,0,0,0.4)";
+				  modal.style.display = "block";
+				  cop.style.display = "none";
+				window.onclick = function(event) {
+				  if (event.target == modal) {
+					
+					$("#copied,#copied1,#copied2").fadeOut();
+					$("#myModal").fadeOut();
+					d.style.transition="0.4s";
+				  }
+				}
+				return false;
+				}
+		    </script>
+			<script>
+				$(function(){
+				  new Clipboard('.copy-text');
+				});
+				</script>
+				<script>
+
+
+				   $("#ok").on('click', function() {
+				   $("#copied").fadeIn();
+				   $("#copied1,#copied2").fadeOut();
+				});
+				$("#ok1").on('click', function() {
+				   $("#copied1").fadeIn();
+				   $("#copied,#copied2").fadeOut();
+				});
+				$("#ok2").on('click', function() {
+				   $("#copied2").fadeIn();
+				   $("#copied1,#copied").fadeOut();
+				});
+			</script>
+            <script>
+				  $('#circle1').circleProgress({
+					value: 0.85,
+					size: 35,
+					startAngle:-0.5,
+					thickness:3,
+					emptyFill: '#8B8D8E',
+
+					fill: {
+					  gradient: ["#169CDA"]
+					}
+				  });
+            </script>
+			<script>
+				// Set the date we're counting down to
+				var countDownDate = new Date("Jun 29, 2020 13:13:0").getTime();
+
+				// Update the count down every 1 second
+				var x = setInterval(function() {
+
+				  // Get today's date and time
+				  var now = new Date().getTime();
+					
+				  // Find the distance between now and the count down date
+				  var distance = countDownDate - now;
+					
+				  // Time calculations for days, hours, minutes and seconds
+				  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					
+				  // Output the result in an element with id="demo"
+				  document.getElementById("demo").innerHTML =  minutes + ":" + seconds;
+				  document.getElementById("demo1").innerHTML =  minutes + ":" + seconds;
+					
+				  // If the count down is over, write some text 
+				  if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "EXPIRED";
+					document.getElementById("demo1").innerHTML = "EXPIRED";
+				  }
+				}, 1000);
+            </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
